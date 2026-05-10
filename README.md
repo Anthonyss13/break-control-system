@@ -1,21 +1,21 @@
 # Break Control System
 
-Sistema de controle de ponto de break criado para uma empresa que precisava registrar, acompanhar e exportar pausas dos colaboradores de forma simples e organizada.
+A break time tracking system developed for a company that needed a simple and organized way to register, monitor, and export employee break records.
 
-O projeto nasceu como uma interface web leve para operadores registrarem entrada e saida de break, manterem historico local e exportarem relatorios. A estrutura do repositorio tambem inclui uma base de backend em Flask para evoluir o sistema para uma API centralizada com banco SQLite.
+The project started as a lightweight web interface that allows operators to register break start and end times, maintain local history records, and export reports. The repository structure also includes a Flask backend foundation to evolve the system into a centralized API with an SQLite database.
 
-## Objetivo
+## Objective
 
-Empresas com equipes em turno precisam saber quando cada colaborador inicia e finaliza o break. Este sistema ajuda o operador a:
+Companies with shift-based teams need to track when each employee starts and finishes their break. This system helps operators to:
 
-- selecionar o funcionario;
-- registrar inicio e fim do break;
-- consultar o historico do dia;
-- exportar relatorio;
-- limpar registros com senha de operador;
-- preparar uma futura integracao com API e banco de dados.
+- select employees;
+- register break start and end times;
+- view daily history records;
+- export reports;
+- clear records using an operator password
+- prepare the system for future API and database integration.
 
-## Estrutura
+## Structure
 
 ```text
 break-control-system/
@@ -39,21 +39,21 @@ break-control-system/
 └── docker-compose.yml
 ```
 
-## Funcionalidades atuais
+## Current Features
 
-- Frontend responsivo em HTML, CSS e Python via Pyodide.
-- Persistencia local no navegador usando `localStorage`.
-- Login de operador para acoes sensiveis.
-- Exportacao de historico para arquivo de relatorio.
-- Base de API Flask para cadastro e consulta de registros.
+- Responsive frontend built with HTML, CSS, and Python using Pyodide
+- Local browser persistence using `localStorage`.
+- Operator login for sensitive actions.
+- History export to report files.
+- Flask API foundation for record registration and queries.
 
-## Como executar o frontend
+## Running the Frontend
 
-Abra o arquivo `frontend/index.html` no navegador.
+Open the file `frontend/index.html` in your browserr.
 
-> Observacao: o Pyodide e carregado via CDN, entao o navegador precisa de internet no primeiro carregamento.
+> Note: Pyodide is loaded through a CDN, so an internet connection is required during the first load.
 
-## Como executar o backend
+## Running the Backend
 
 ```bash
 cd backend
@@ -63,7 +63,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-No Windows PowerShell:
+On Windows PowerShell:
 
 ```powershell
 cd backend
@@ -73,7 +73,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-A API ficara disponivel em `http://localhost:5000`.
+The API will be available at `http://localhost:5000`.
 
 ## Docker
 
@@ -81,15 +81,15 @@ A API ficara disponivel em `http://localhost:5000`.
 docker compose up --build
 ```
 
-## Roadmap sugerido
+## Suggested Roadmap
 
-- Integrar o frontend com a API Flask.
-- Adicionar autenticacao real de operador.
-- Criar dashboard diario por colaborador.
-- Gerar relatorios CSV/XLSX no backend.
-- Adicionar testes automatizados.
-- Publicar a tela em GitHub Pages ou outro hosting estatico.
+- Integrate the frontend with the Flask API..
+- Add real operator authentication.
+- Create a daily dashboard per employee.
+- Generate CSV/XLSX reports on the backend.
+- Add automated tests.
+- Publish the interface using GitHub Pages or another static hosting service.
 
-## Licenca
+## License
 
-Este projeto esta sob a licenca MIT.
+This project is licensed under the MIT License MIT.
