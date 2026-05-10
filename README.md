@@ -1,95 +1,39 @@
 # Break Control System
 
-Sistema de controle de ponto de break criado para uma empresa que precisava registrar, acompanhar e exportar pausas dos colaboradores de forma simples e organizada.
+Sistema simples de controle de break para colaboradores.
 
-O projeto nasceu como uma interface web leve para operadores registrarem entrada e saida de break, manterem historico local e exportarem relatorios. A estrutura do repositorio tambem inclui uma base de backend em Flask para evoluir o sistema para uma API centralizada com banco SQLite.
+Este projeto foi criado para uma empresa que precisava registrar o inicio e o fim dos breaks da equipe em uma tela rapida, sem instalacao complexa e sem depender de um backend.
 
-## Objetivo
+## O que o sistema faz
 
-Empresas com equipes em turno precisam saber quando cada colaborador inicia e finaliza o break. Este sistema ajuda o operador a:
+- seleciona o colaborador;
+- registra inicio do break;
+- registra retorno do break;
+- mostra o historico de registros;
+- protege exportacao e limpeza do historico com login de operador;
+- salva os dados localmente no navegador;
+- exporta relatorio para conferencia.
 
-- selecionar o funcionario;
-- registrar inicio e fim do break;
-- consultar o historico do dia;
-- exportar relatorio;
-- limpar registros com senha de operador;
-- preparar uma futura integracao com API e banco de dados.
+## Como usar
 
-## Estrutura
+Abra o arquivo `index.html` no navegador.
+
+O sistema usa Pyodide via CDN para executar a logica em Python dentro do navegador. Por isso, no primeiro carregamento, e preciso estar conectado a internet.
+
+## Estrutura atual
 
 ```text
 break-control-system/
-├── backend/
-│   ├── app.py
-│   ├── database/
-│   ├── routes/
-│   └── requirements.txt
-├── frontend/
-│   ├── index.html
-│   ├── css/
-│   ├── js/
-│   └── assets/
-├── screenshots/
-├── docs/
-│   ├── system-flow.md
-│   └── api.md
-├── .gitignore
+├── index.html
 ├── README.md
 ├── LICENSE
-└── docker-compose.yml
+└── .gitignore
 ```
 
-## Funcionalidades atuais
+## Observacao
 
-- Frontend responsivo em HTML, CSS e Python via Pyodide.
-- Persistencia local no navegador usando `localStorage`.
-- Login de operador para acoes sensiveis.
-- Exportacao de historico para arquivo de relatorio.
-- Base de API Flask para cadastro e consulta de registros.
-
-## Como executar o frontend
-
-Abra o arquivo `frontend/index.html` no navegador.
-
-> Observacao: o Pyodide e carregado via CDN, entao o navegador precisa de internet no primeiro carregamento.
-
-## Como executar o backend
-
-```bash
-cd backend
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-python app.py
-```
-
-No Windows PowerShell:
-
-```powershell
-cd backend
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-python app.py
-```
-
-A API ficara disponivel em `http://localhost:5000`.
-
-## Docker
-
-```bash
-docker compose up --build
-```
-
-## Roadmap sugerido
-
-- Integrar o frontend com a API Flask.
-- Adicionar autenticacao real de operador.
-- Criar dashboard diario por colaborador.
-- Gerar relatorios CSV/XLSX no backend.
-- Adicionar testes automatizados.
-- Publicar a tela em GitHub Pages ou outro hosting estatico.
+Esta versao foi mantida propositalmente simples porque a aplicacao principal esta toda no `index.html`. Se no futuro o projeto precisar salvar dados em servidor, autenticar usuarios reais ou gerar relatorios centralizados, a estrutura pode crescer novamente com backend e banco de dados.
 
 ## Licenca
 
-Este projeto esta sob a licenca MIT.
+MIT
