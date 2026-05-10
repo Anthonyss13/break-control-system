@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.db
+*.sqlite
+
+# Flask
+.env
+instance/
+
+# Frontend/local
+.DS_Store
+Thumbs.db
+
+# Reports and exports
+*.xlsx
+*.csv
+*.log
+
+# IDE
+.vscode/
+.idea/
