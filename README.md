@@ -1,4 +1,4 @@
-# Break Control System
+# Break Control System 
 
 A lightweight break time tracking system built for real operational use in a company environment.
 
